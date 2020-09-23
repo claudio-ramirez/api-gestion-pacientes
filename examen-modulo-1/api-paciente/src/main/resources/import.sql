@@ -1,0 +1,4 @@
+INSERT INTO apipaciente.paciente (id, nombres, apellido_paterno, apellido_materno, numero_identificacion, fecha_nacimiento, vigente) VALUES (1, 'OSCAR ALEJANDRO', 'BEROIZA', 'HERNANDEZ', '14687359-4', '1988-08-03', TRUE);
+INSERT INTO apipaciente.paciente (id, nombres, apellido_paterno, apellido_materno, numero_identificacion, fecha_nacimiento, vigente) VALUES (2, 'ROCIO ANDREA', 'CARRASCO', 'HERNANDEZ', '15571206-1', '1984-10-27', TRUE);
+INSERT INTO apipaciente.paciente (id, nombres, apellido_paterno, apellido_materno, numero_identificacion, fecha_nacimiento, vigente) VALUES (3, 'VIVIANA JAVIERA', 'PALMA', 'AGUAYO', '13075291-9', '1979-04-16', TRUE);
+INSERT INTO apipaciente.paciente (id, nombres, apellido_paterno, apellido_materno, numero_identificacion, fecha_nacimiento, vigente) VALUES (4, 'CESAR ANDRES', 'PINARES', 'RIQUELME', '8461947-3', '1958-02-06', TRUE);
