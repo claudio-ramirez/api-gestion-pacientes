@@ -1,7 +1,0 @@
-# Spring Framework
-spring:
-  application:
-    name: api.profesional
-  cloud:
-    config:
-      uri: http://localhost:4444

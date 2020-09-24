@@ -1,7 +1,0 @@
-# Spring Framework
-spring:
-  application:
-    name: api.paciente
-  cloud:
-    config:
-      uri: http://localhost:4444
