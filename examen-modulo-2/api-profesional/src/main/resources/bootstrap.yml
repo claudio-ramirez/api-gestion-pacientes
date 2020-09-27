@@ -1,0 +1,4 @@
+# Spring Framework
+spring:
+  application:
+    name: api.profesional

@@ -1,0 +1,20 @@
+# HTTP Server
+server:
+  port: 6565
+
+# Servidor Eureka
+eureka:
+  client:
+    register-with-eureka: false
+    serviceUrl:
+      default-zone: http://localhost:8761/eureka
+
+# Servidor Zuul
+zuul:
+  routes:
+    apiprofesional:
+      path: /profesional/**
+      service-id: api.profesional
+    apipaciente:
+      path: /paciente/**
+      service-id: api.paciente
