@@ -10,7 +10,7 @@ import com.yavu.apipaciente.configuraciones.RibbonConfiguracion;
 
 @EnableDiscoveryClient
 @SpringBootApplication
-@RibbonClient(name = "restTemplate", configuration = {RibbonConfiguracion.class})
+@RibbonClient(name = "restTemplate", configuration = { RibbonConfiguracion.class })
 @EnableCircuitBreaker
 public class ApiPacienteApplication {
 	public static void main(String[] args) {

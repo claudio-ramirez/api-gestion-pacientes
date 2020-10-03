@@ -2,29 +2,20 @@ package com.yavu.apiagenda.productores;
 
 import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.amqp.core.DirectExchange;
-import org.springframework.amqp.core.TopicExchange;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Configuration;
-import com.yavu.apiagenda.modelos.CalendarioModelo;
 
-@Configuration
+import com.yavu.apiagenda.modelos.AgendaModelo;
+
 public class EventSenderMessageProductor {
 	@Autowired
-	private AmqpTemplate amqpTemplate;
+	private AmqpTemplate rabbitTemp;
 
 	@Autowired
 	private DirectExchange directExchange;
 
-	@Autowired
-	private TopicExchange topicExchange;
-
 	public EventSenderMessageProductor() {}
 
-	public void sendMessage( CalendarioModelo calendarioModelo ) {
-		amqpTemplate.convertAndSend( directExchange.getName(), "yavu.agenda", calendarioModelo );
-	}
-
-	public void sendMessageRollback( CalendarioModelo calendarioModelo ) {
-		amqpTemplate.convertAndSend( topicExchange.getName(), "rollback.calendario", calendarioModelo );
+	public void sendMessage( AgendaModelo agenda ) {
+		rabbitTemp.convertAndSend( directExchange.getName(),"agenda.creada", agenda );
 	}
 }

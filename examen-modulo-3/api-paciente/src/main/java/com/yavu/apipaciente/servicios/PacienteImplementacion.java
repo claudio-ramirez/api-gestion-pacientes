@@ -18,7 +18,7 @@ public class PacienteImplementacion implements PacienteServicio {
 	public PacienteModelo guardarPaciente(PacienteModelo paciente) {
 		return pacienteRepositorio.save(paciente);
 	}
-	
+
 	@Override
 	public String eliminarPaciente(Long id) {
 		if(id != null) {

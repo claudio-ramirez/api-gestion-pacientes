@@ -8,16 +8,12 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import com.yavu.apiprofesional.modelos.ProfesionalModelo;
-import com.yavu.apiprofesional.productores.EventSenderMessageProductor;
 import com.yavu.apiprofesional.repositorios.ProfesionalRepositorio;
 
 @Service
 public class ProfesionalImplementacion implements ProfesionalServicio {
 	@Autowired
 	ProfesionalRepositorio profesionalRepositorio;
-
-	@Autowired
-	private EventSenderMessageProductor eventSenderMessageProductor;
 
 	@Value("${server.port}")
 	private String puerto;
@@ -60,8 +56,6 @@ public class ProfesionalImplementacion implements ProfesionalServicio {
 			_profesional.setIdTipo(profesional.getIdTipo());
 
 			profesionalRepositorio.save(_profesional);
-
-			eventSenderMessageProductor.sendMessage(_profesional);
 		}
 
 		return profesionalActualizado;

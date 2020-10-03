@@ -1,7 +1,0 @@
-# Spring Framework
-spring:
-  application:
-    name: servidor.zuul
-#  profiles:
-#    active:
-#    - prod

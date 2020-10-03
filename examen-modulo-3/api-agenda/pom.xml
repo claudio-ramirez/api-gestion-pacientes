@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.yavu</groupId>
-	<artifactId>api-agendar</artifactId>
+	<artifactId>api-agenda</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>api-agendar</name>
-	<description>API para agendar pacientes</description>
+	<name>api-agenda</name>
+	<description>API de agenda</description>
 
 	<properties>
 		<java.version>1.8</java.version>
@@ -51,6 +51,16 @@
 			<groupId>org.postgresql</groupId>
 			<artifactId>postgresql</artifactId>
 			<scope>runtime</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
 
 		<dependency>

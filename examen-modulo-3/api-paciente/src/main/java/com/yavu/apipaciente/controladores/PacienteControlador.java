@@ -84,6 +84,7 @@ public class PacienteControlador {
 	@SuppressWarnings( "unused" )
 	private ProfesionalModelo fallbackMethod(Long id) {
 		TipoModelo idTipoModeloTemporal = new TipoModelo(id, "TIPO", "DESCRIPCION", true);
+
 		LocalDate fechaNacimientoTemporal = LocalDate.of(2020, 9, 25);
 
 		return new ProfesionalModelo(id, "NOMBRES", "APELLIDO PATERNO", "APELLIDO MATERNO", 1, true, idTipoModeloTemporal, fechaNacimientoTemporal);

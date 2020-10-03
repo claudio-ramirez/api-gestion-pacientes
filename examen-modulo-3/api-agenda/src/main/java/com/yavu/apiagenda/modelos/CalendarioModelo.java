@@ -1,40 +1,33 @@
 package com.yavu.apiagenda.modelos;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
-public class CalendarioModelo {
-	private Long idProfesional;
-	private Long idPaciente;
+public class CalendarioModelo implements Serializable {
+	private static final long serialVersionUID = 3988763878294433142L;
+
+	private Long id;
 	private LocalDate fecha;
 	private Integer hora;
 	private boolean disponible;
 
 	public CalendarioModelo() {}
 
-	public CalendarioModelo(Long idPaciente, Long idProfesional, LocalDate fecha, Integer hora, boolean disponible) {
+	public CalendarioModelo( Long id, LocalDate fecha, Integer hora, boolean disponible ) {
 		super();
 
-		this.idPaciente = idPaciente;
-		this.idProfesional = idProfesional;
+		this.id = id;
 		this.fecha = fecha;
 		this.hora = hora;
 		this.disponible = disponible;
 	}
 
-	public Long getIdProfesional() {
-		return idProfesional;
+	public Long getId() {
+		return id;
 	}
 
-	public void setIdProfesional( Long idProfesional ) {
-		this.idProfesional = idProfesional;
-	}
-
-	public Long getIdPaciente() {
-		return idPaciente;
-	}
-
-	public void setIdPaciente( Long idPaciente ) {
-		this.idPaciente = idPaciente;
+	public void setId( Long id ) {
+		this.id = id;
 	}
 
 	public LocalDate getFecha() {

@@ -5,14 +5,14 @@ management:
       exposure:
         include: hystrix.stream, info, health
 
-# Discovery Server Eureka
+# Servidor Eureka
 eureka:
   client:
     serviceUrl:
       default-zone: http://localhost:8761/eureka
   instance:
-    status-page-url: /infoPacientes
-    health-check-url-path: /healthPacientes
+    status-page-url: /infoPaciente
+    health-check-url-path: /healthPaciente
     metadata-map:
       app-owner: cramirez
       description: API generada para el curso de arquitectura de microservicios

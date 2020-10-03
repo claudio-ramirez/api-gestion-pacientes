@@ -31,8 +31,3 @@ spring:
     password: postgres
     driverClassName: org.postgresql.Driver
     continue-on-error: true
-  rabbitmq:
-    virtual-host: kqmrapfy
-    username: kqmrapfy
-    password: kvtV3yHLjFFx6qPOgTX7VSNKj-PVa5xh
-    addresses: amqps://kqmrapfy:kvtV3yHLjFFx6qPOgTX7VSNKj-PVa5xh@grouse.rmq.cloudamqp.com/kqmrapfy

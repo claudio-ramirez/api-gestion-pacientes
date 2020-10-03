@@ -3,7 +3,6 @@ package com.yavu.apiagenda.modelos;
 import java.io.Serializable;
 import java.time.LocalDate;
 import javax.persistence.Column;
-import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -22,11 +21,15 @@ public class AgendaModelo implements Serializable {
 	@GeneratedValue( strategy = GenerationType.AUTO )
 	private Long id;
 
-	@EmbeddedId
-	private AgendaPrimaryKey agendaPrimaryKey;
+//	@ManyToOne
+//	@JoinColumn(name = "id_paciente")
+	@Column( name = "id_paciente", nullable = false )
+	private Long idPaciente;
 
-	@Column( name = "confirmacion" )
-	private boolean confirmacion;
+//	@ManyToOne
+//	@JoinColumn(name = "id_profesional")
+	@Column( name = "id_profesional", nullable = false )
+	private Long idProfesional;
 
 	@JsonFormat( pattern = "yyyy-MM-dd" )
 	@Column( name = "fecha_agenda", nullable = false )
@@ -37,11 +40,12 @@ public class AgendaModelo implements Serializable {
 
 	public AgendaModelo() {}
 
-	public AgendaModelo(AgendaPrimaryKey agendaPrimaryKey, boolean confirmacion, LocalDate fechaAgenda, Integer horaAgenda) {
+	public AgendaModelo( Long id, Long idPaciente, Long idProfesional, LocalDate fechaAgenda, Integer horaAgenda ) {
 		super();
 
-		this.agendaPrimaryKey = agendaPrimaryKey;
-		this.confirmacion = confirmacion;
+		this.id = id;
+		this.idPaciente = idPaciente;
+		this.idProfesional = idProfesional;
 		this.fechaAgenda = fechaAgenda;
 		this.horaAgenda = horaAgenda;
 	}
@@ -54,20 +58,20 @@ public class AgendaModelo implements Serializable {
 		this.id = id;
 	}
 
-	public AgendaPrimaryKey getAgendaPrimaryKey() {
-		return agendaPrimaryKey;
+	public Long getIdPaciente() {
+		return idPaciente;
 	}
 
-	public void setAgendaPrimaryKey( AgendaPrimaryKey agendaPrimaryKey ) {
-		this.agendaPrimaryKey = agendaPrimaryKey;
+	public void setIdPaciente( Long idPaciente ) {
+		this.idPaciente = idPaciente;
 	}
 
-	public boolean isConfirmacion() {
-		return confirmacion;
+	public Long getIdProfesional() {
+		return idProfesional;
 	}
 
-	public void setConfirmacion( boolean confirmacion ) {
-		this.confirmacion = confirmacion;
+	public void setIdProfesional( Long idProfesional ) {
+		this.idProfesional = idProfesional;
 	}
 
 	public LocalDate getFechaAgenda() {
